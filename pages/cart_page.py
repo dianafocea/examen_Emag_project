@@ -3,19 +3,18 @@ from pages.base_page import BasePage
 
 
 class CartPage(BasePage):
-    # Atributs
-    TOTAL_PRICE_BIG = (By.XPATH, '(//p[@class="price order-summary-total-price"]')
-    TOTAL_PRICE_SMALL = (By.XPATH, '//p[@class="price order-summary-total-price"]//sup/small')
-    DELETE_LINK = (By.XPATH, '//button[contains(text(), "Sterge")]')
-    EMPTY_CART_MSG = (By.XPATH, '//div[text()="Cosul tau este gol"]')
+    # Attributes
+    TOTAL_PRICE_BIG = (By.XPATH, '//p[@class="price order-summary-total-price"]')
+    DELETE_LINK = (By.XPATH, '(//button[contains(text(), "Sterge")])[2]')
+    EMPTY_CART_MSG = (By.XPATH, '//p[@class="mrg-btm-none"]')
     CHECKOUT_BTN = (By.XPATH, '(//a[@href="/cart/checkout"])[1]')
+
 
     # Methods
     def verify_total_price(self, expected_price):
-        big_price = self.driver.find_element(*self.TOTAL_PRICE_BIG).text
-        small_price = self.driver.find_element(*self.TOTAL_PRICE_SMALL).text
-        actual_price = big_price + small_price
-        self.assertEqual(actual_price, expected_price, "Price is incorrect")
+        actual_price = self.driver.find_element(*self.TOTAL_PRICE_BIG).text
+        self.assertEqual(actual_price, expected_price, f"Price is incorrect: expected = {expected_price} but actual = {actual_price}")
+
 
     def click_sterge_link(self):
         self.wait_and_click_elem_by_selector(*self.DELETE_LINK)

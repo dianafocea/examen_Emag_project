@@ -2,6 +2,10 @@ import time
 
 from behave import *
 
+@when('home: I click Tip afisare: list')
+def step_impl(context):
+    context.product_page.click_display_product_list()
+
 @when('products: I add product to basket "{product_name}"')
 def step_impl(context, product_name):
     context.product_page.add_to_basket_product_name(product_name)
@@ -19,8 +23,8 @@ def step_impl(context):
     context.product_page.click_activate_filter_bar_price()
 
 @when('products: We select the slider on the right and enter the price "{slider_selected}" "{xoffset}"')
-def step_impl(context, slider_selected , xoffset):
-    context.product_page.select_interval_price(slider_selected , xoffset)
+def step_impl(context, slider_selected, xoffset):
+    context.product_page.select_interval_price(slider_selected, xoffset)
 
 @then('products: I check if the search contains the searched result "{query}"')
 def step_impl(context, query):

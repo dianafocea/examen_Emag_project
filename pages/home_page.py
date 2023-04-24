@@ -10,8 +10,8 @@ class HomePage(BasePage):
     ENTER_YOUR_ACCOUNT_BTN = (By.XPATH, '(//a[@id="my_account"]//i)[1]')
     HELLO_MSG = (By.XPATH, '//p/strong[contains(text(), "Salut")]')
     SEARCH_INPUT = (By.ID, 'searchboxTrigger')
-    ENTER_YOUR_ACCOUNT_CLOSE_BTN = (By.XPATH, '(//i[@class="em em-close"])[3]')
-    OFERTA_ZILEI_CLOSE_BTN = (By.XPATH, '(//i[@class="em em-close"]//parent::button[@class="close"]//i')
+    ENTER_YOUR_ACCOUNT_CLOSE_BTN = (By.XPATH, '//button[@class="js-dismiss-login-notice-btn dismiss-btn btn btn-link pad-sep-none pad-hrz-none"]')
+    OFERTA_ZILEI_CLOSE_BTN = (By.XPATH, '//i[@class="em em-close"]//parent::button[@class="close"]//i')
 
 
     # Methods

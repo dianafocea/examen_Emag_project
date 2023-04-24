@@ -26,7 +26,7 @@ search = driver.find_element(By.ID, 'searchboxTrigger')
 search.send_keys('laptop' + Keys.ENTER)
 sleep(2)
 
-# filtram dupa brand "apple"
+# filtram dupa brand "Apple"
 driver.find_element(By.XPATH, '(//a[@data-name="Apple"])[1]').click()
 sleep(2)
 
@@ -37,7 +37,7 @@ sleep(3)
 elem1_left = driver.find_element(By.XPATH, "//a[@class='knob left']")
 elem2_right = driver.find_element(By.XPATH, "//a[@class='knob right']")
 action = ActionChains(driver)
-# action.drag_and_drop_by_offset(elem1_left ,20, 0).perform()
+# action.drag_and_drop_by_offset(elem1_left, 20, 0).perform()
 # sleep(5)
-action.drag_and_drop_by_offset(elem2_right ,-200, 0).perform()
+action.drag_and_drop_by_offset(elem2_right, -200, 0).perform()
 sleep(10)

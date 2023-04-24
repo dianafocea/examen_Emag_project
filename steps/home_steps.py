@@ -4,9 +4,9 @@ from behave import *
 @given('home: I am a user on emag.ro Home page')
 def step_impl(context):
     context.home_page.navigate_to_home_page()
-    context.home_page.click_oferta_zilei_close_btn()
     context.home_page.click_accept_cookies_btn()
     context.home_page.click_enter_in_account_close_btn()
+    context.home_page.click_oferta_zilei_close_btn()
 
 @when('home: I click on contul meu')
 def step_impl(context):

@@ -8,7 +8,7 @@ def step_impl(context, product_name):
 def step_impl(context):
     context.favorite_page.click_produse_favorite()
 
-@when('favorite: I check that i have reached the favorites page url')
+@when('favorite: I check that I have reached the favorites page url')
 def step_impl(context):
     context.favorite_page.verify_favorites_url()
 
