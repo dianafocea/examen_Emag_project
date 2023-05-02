@@ -12,6 +12,7 @@ class HomePage(BasePage):
     SEARCH_INPUT = (By.ID, 'searchboxTrigger')
     ENTER_YOUR_ACCOUNT_CLOSE_BTN = (By.XPATH, '//button[@class="js-dismiss-login-notice-btn dismiss-btn btn btn-link pad-sep-none pad-hrz-none"]')
     OFERTA_ZILEI_CLOSE_BTN = (By.XPATH, '//i[@class="em em-close"]//parent::button[@class="close"]//i')
+    LOGOUT_BTN = (By.CLASS_NAME, "a.js-logout-btn")
 
 
     # Methods
@@ -39,9 +40,19 @@ class HomePage(BasePage):
     def verify_url_message(self):
         self.verify_page_url('https://www.emag.ro/')
 
+    def hover_over_my_account(self):
+        my_account = self.driver.find_element(By.XPATH, '(//span[@class="visible-lg-inline visible-xl-inline"])[1]')
+        self.hover_by_elem(my_account)
+
+    def click_logout_btn(self):
+        self.click_if_present_by_selector(*self.LOGOUT_BTN)
+
+
     def hover_over_menu_category(self, category_name):
         category = self.driver.find_element(By.XPATH, f'//span[text()="{category_name}"]')
         self.hover_by_elem(category)
+
+
 
     def click_menu_subcategory(self, subcategory_name):
         self.wait_and_click_elem_by_selector(By.XPATH, f'//a[text()="{subcategory_name}"]')

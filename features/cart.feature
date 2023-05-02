@@ -9,7 +9,7 @@ Feature: Emag Cart Feature
 
     @cart_price
     Scenario: Test cart total price functionality
-      Then cart: I verify that total price is correct "2.698,60 Lei"
+      Then cart: I verify that total price is correct "2.649,00 Lei"
 
 
     @cart_remove

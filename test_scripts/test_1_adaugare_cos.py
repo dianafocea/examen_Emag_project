@@ -21,7 +21,7 @@ sleep(2)
 driver.find_element(By.XPATH, '//a[text()="Dulciuri"]').click()
 sleep(2)
 
-# adaugam in cos bomboane Merci rosu
+# adaugam in cos biscuiti
 # observati ca pornim de la nume produs
 # urcam in sus prin div-uri pana avem adaugar in cos cuprinsa in div
 # coboram in jos pana la butonul pe care scrie adauga in cos
@@ -29,7 +29,7 @@ sleep(2)
 driver.find_element(By.XPATH, '//a[contains(text(), "Biscuiti")]/parent::h2/parent::div/parent::div/parent::div//button[text()="Adauga in Cos"]').click()
 sleep(2)
 
-# asteptam sa se incarce vezi detalii cos - dureaza ceva pana apare popup
+# asteptam sa se incarce vezi detalii cos - dureaza pana apare popup
 detalii_cos = WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.XPATH, '//a[contains(text(), "Vezi detalii cos")]')))
 
 # click pe vezi detalii cos

@@ -9,18 +9,16 @@ class FavoritePage(BasePage):
     # Methods
     def add_to_favorites_by_product_name(self, name):
         self.wait_scroll_and_click_elem_by_selector(By.XPATH, '//i[@class="em em-fav em-fav-bold"]')
-                # f'//a[contains(text(), "{name}")]/parent::h2/parent::div/parent::div/parent::div//button[@class="add-to-favorites btn"]'
 
     def delete_from_favorites_by_product_name(self, name):
-        self.wait_and_click_elem_by_selector(By.XPATH, '//span[@class="hidden-sm hidden-xs gtm_9p2y1a"]')
-                # f'//span[contains(text(), "{name}")]/parent::a/parent::h2/parent::div/parent::div/parent::div//span[text()="Sterge"]'
-
+        self.wait_and_click_elem_by_selector(By.XPATH, '//i[@class="em em-delete gtm_9p2y1a"]')
+            #                                    //span[@class="hidden-sm hidden-xs gtm_9p2y1a"]
     def click_produse_favorite(self):
         self.wait_and_click_elem_by_selector(*self.PRODUSE_FAVORITE_BTN)
         sleep(6)
 
     def add_to_basket_by_name_but_from_favorites_list(self, name):
-        self.wait_and_click_elem_by_selector(By.XPATH, f'//span[contains(text(), "{name}")]/parent::a/parent::h2/parent::div/parent::div/parent::div//button[text()="Adauga in Cos"]')
+        self.wait_and_click_elem_by_selector(By.XPATH, '//button[text()="Adauga in Cos"]')
 
     def check_product_in_cart(self, quantity_cart):
         self.verify_text_on_elem_by_selector(By.XPATH, f'//span[text()="{quantity_cart}"]', '1')

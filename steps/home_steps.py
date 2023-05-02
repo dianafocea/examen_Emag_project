@@ -12,6 +12,14 @@ def step_impl(context):
 def step_impl(context):
     context.home_page.click_my_account_btn()
 
+@when('home: I click logout button')
+def step_impl(context):
+    context.home_page.click_logout_btn()
+
+@when('home: I hover over contul meu')
+def step_impl(context):
+    context.home_page.hover_over_my_account()
+
 @when('home: I search after "{query}"')
 def step_impl(context, query):
     context.home_page.search_after(query)

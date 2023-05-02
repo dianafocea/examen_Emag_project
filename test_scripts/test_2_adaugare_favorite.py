@@ -20,7 +20,7 @@ sleep(2)
 driver.find_element(By.XPATH, '//a[text()="Laptopuri"]').click()
 sleep(2)
 
-# add to favorites the laptop
+# add the laptop to favorites
 # notice that we start from the product name
 # we go up through h2 and div until we have add to favorites contained in the div
 # at the end, scroll down to the button that says add to favorites
@@ -31,7 +31,7 @@ sleep(2)
 driver.find_element(By.ID, "my_wishlist").click()
 sleep(2)
 
-# I check that i have reached the favorites page url
+# I check that I have reached the favorites page url
 assert driver.current_url == 'https://www.emag.ro/favorites?ref=ua_favorites'
 sleep(2)
 

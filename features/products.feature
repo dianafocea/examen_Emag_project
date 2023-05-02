@@ -14,7 +14,6 @@ Feature: Emag Search Feature
       |  ceas   |
 
 
-
     @search_with_filter
     Scenario: Test search functionality with filter Brand and Price
       When home: I search after "laptop"

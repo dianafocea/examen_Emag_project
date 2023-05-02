@@ -19,5 +19,11 @@ Feature: Emag login feature
       When cart: I click checkout button
       Then login: I verify login page url
 
-
+    @login_account
+    Scenario: Click contul meu button and succesfully login
+      When home: I click on contul meu
+      When login: I set my email "test_emag_itf@yopmail.com" and click Continua
+      When login: I set my password "Test1234@" and click Continua
+      When home: I click on contul meu
+      Then my_account: I verify my account page url
 
