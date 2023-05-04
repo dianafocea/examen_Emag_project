@@ -7,7 +7,7 @@ class CartPage(BasePage):
     TOTAL_PRICE_BIG = (By.XPATH, '//p[@class="price order-summary-total-price"]')
     DELETE_LINK = (By.XPATH, '(//button[contains(text(), "Sterge")])[2]')
     EMPTY_CART_MSG = (By.XPATH, '//p[@class="mrg-btm-none"]')
-    CHECKOUT_BTN = (By.XPATH, '(//a[@href="/cart/checkout"])[1]')
+    CHECKOUT_BTN = (By.XPATH, '//a[@class=" btn btn-emag btn-secondary font-size-md btn-block btn-lg gtm_sn11312018"]')
 
 
     # Methods

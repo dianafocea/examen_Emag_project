@@ -7,7 +7,7 @@ class LoginPage(BasePage):
     EMAIL_INPUT = (By.ID, 'user_login_email')
     PASSWORD_INPUT = (By.ID, 'user_login_password')
     CONTINUE_BTN = (By.ID, 'user_login_continue')
-    ACTIVATE_LATER_BTN = (By.XPATH, '//a[text()="Activează mai târziu"]')
+    ACTIVATE_LATER_BTN = (By.XPATH, '//a[@class="text-center font-weight-semibold"]')
     LOGO_IMG = (By.XPATH, '//img[@alt="eMAG"]')
 
     # Methods

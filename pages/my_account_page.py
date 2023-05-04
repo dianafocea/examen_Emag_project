@@ -3,7 +3,7 @@ from pages.base_page import BasePage
 
 
 class MyAccountPage(BasePage):
-    # Atributs
+    # Attributes
     MY_ACCOUNT_BTN = (By.CLASS_NAME, 'span.ini')
     MY_ORDERS_BTN = (By.XPATH, '//li[@class="is-active"]')
     USERNAME_MSG = (By.XPATH, "//strong[text()='Salut, test emag itf']")
